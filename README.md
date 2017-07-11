@@ -9,6 +9,7 @@ The goal of the competition is to write the AI for a bot that competes against a
 **Todo:**
 - Soft deadline (30min after meetup? should just be a "your github url points to our code structure" check)
 - GitHub instructions
+- where to mention that you get a second between the "welcome" and the first "stateupdate" to get ready?
 
 ## Getting started
 1. Start by reading the competition rules at  [Martin Sandsmark's repository](https://github.com/sandsmark/aicompo-tg17).
