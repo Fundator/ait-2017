@@ -14,7 +14,7 @@ The goal of the competition is to write the AI for a bot that competes against a
 ## Getting started
 1. Start by reading the competition rules at  [Martin Sandsmark's repository](https://github.com/sandsmark/aicompo-tg17).
 2. Download Ghostly, the competition host program
-    * Windows: Either download the compiled Windows binary [ghostly-win32.zip](https://github.com/sandsmark/aicompo-tg17/releases) *(recommended)*, or [follow these instructions](https://github.com/sandsmark/aicompo-tg17#alternative).
+    * Windows: Either download the compiled Windows binary [ghostly-win32.zip](https://github.com/sandsmark/aicompo-tg17/releases/download/1.2/ghostly-win32.zip) *(recommended)*, or [follow these instructions](https://github.com/sandsmark/aicompo-tg17#alternative).
     * Linux: [How to compile manually on Linux](https://github.com/sandsmark/aicompo-tg17#how-to-compile)
 3. Select your language from the supported languages list.
 4. *(Optional)* To hit the ground running, take a look at the supplied scaffolding/sample code for each supported language. The code contains basic client/server logic needed, as well as other boilerplate sections of code surrounding the actual AI. There are also a handfull of working "stupid-bots" you can work against as a MVP benchmark, or just look at some of their use of the utilities provided.
