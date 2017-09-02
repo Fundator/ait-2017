@@ -137,7 +137,7 @@ The sample bot can be found here: http://bit.ly/2eOJH7u
 ## How to submit your bot
 Participants must submit their bots through GitHub. Take a look at the "All users" section under "How to get started" for details on how to set up a GitHub account and an empty bot repository.
 
-Once you have an empty repository on GitHub, it's time to initialize your local repository. Navigate to the directory where your bot code resides. If you want to start off using the sample bot, that would be in the *somewhere-on-your-drive\FAIGHTbots\python_boilerplate.
+Once you have an empty repository on GitHub, it's time to initialize your local repository. Navigate to the directory where your bot code resides. If you want to start off using the sample bot, that would be in the *somewhere-on-your-drive\FAIGHTbots\python_boilerplate*.
 
 Open a command prompt in this directory.
 
