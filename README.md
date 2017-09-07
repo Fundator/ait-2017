@@ -1,6 +1,8 @@
-# FAIGHT - Fundator's Artificial IntelliGence Heritage Tournament
+![](https://i.imgur.com/HsU1DwL.png)
+-------------------------------------------------------
 
-This repository contains all the information you need in order to participate in the Fundator Artifical IntelliGence Heritage Tournament (hereby known as FAIGHT). 
+This repository contains all the information you need in order to participate in the 
+**Fundator Artifical IntelliGence Heritage Tournament** (hereby known as FAIGHT). 
 
 FAIGHT is a competitive programming competition hosted by [Fundator](http://www.fundator.no).
 
@@ -74,33 +76,27 @@ Fundator provides a Powershell script to get you going as fast as possible. Befo
 
 ### Pre-requisites before running Powershell script
 
-1. Make sure you have *python* installed. If not, a late version of *WinPython* should work. *(download: [32bit](https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.4.0/WinPython-32bit-3.5.4.0Qt5.exe/download) / [64bit](https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.4.0/WinPython-64bit-3.5.4.0Qt5.exe/download))*
-1. Make sure you have the python executable added to the Windows environment variables (PATH). You can test this by opening a command prompt and write the following command:
-![](https://i.imgur.com/PslXo1L.png)
+1. Make sure you have *python* installed. If not, download the installer from [https://www.python.org/](https://www.python.org/). **Make sure to add python to the PATH**:
+![](https://i.imgur.com/GQJWMvG.png)
 
-    If instead of the python version you get the error "'python' is not recognized as an internal or external command ...", open the Environment Variables dialog and edit the "path" variable:
-![](https://i.imgur.com/k7ek4Y4.png)
+1. You can test this by opening a command prompt and write the following command:
+`python --version`
+
+    If instead of the python version you get the error "'python' is not recognized as an internal or external command ...", open the Environment Variables dialog and edit the "path" variable.
+
 1. Make sure you have *Git for Windows* (https://git-scm.com/download/win) installed and added to the Windows environment variables (PATH). The test procedure and remedies are exactly the same as for *python*, only with the following command:
-![](https://i.imgur.com/LqZcuGt.png)
+`git --version`
 
-1. Make sure Windows allows running Powershell scripts. To test this, open a Powershell prompt as Administrator:
-![](https://i.imgur.com/kDNVZPh.png)
+1. Make sure Windows allows running Powershell scripts. To test this, **open a Powershell prompt as Administrator** and run the following command:
+`Get-ExecutionPolicy`
 
-    Type in the following command:
-![](https://i.imgur.com/f2Iqi4R.png)
-
-    If your policy is set to RemoteSigned, Unrestricted or Bypass, you should be fine. If the policy is set to Restricted or AllSigned, Windows won't allow you to run the Powershell script. To enable running of scripts, run the following command:
-![](https://i.imgur.com/KhqiwSr.png)
-
-    Confirm the prompt, and you should be good to go. You might want to reset the policy settings back to the old value when you're done, but that's up to you.
+    If your policy is set to RemoteSigned, Unrestricted or Bypass, you should be fine. If not, run the following to allow running scripts:
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`
 
 ### Running the Powershell script
-If all the pre-requisites above are met, read through the [script found
-here](https://raw.githubusercontent.com/Fundator/ait-2017/master/OneClickFaight.ps1?token=AIVAgM4t68FvAUuJ3tSYC2YTXWrxw8YDks5Zs9BnwA%3D%3D).
+Right-click and save the content of [the script found
+here](https://raw.githubusercontent.com/Fundator/ait-2017/master/OneClickFaight.ps1?token=AIVAgM4t68FvAUuJ3tSYC2YTXWrxw8YDks5Zs9BnwA%3D%3D) to a file with a ***.ps1** extension. The script downloads a bunch of files, so make sure to **place the script in a suitable folder** to contain it all.
 
-The script downloads a bunch of files, so make sure to place it in a suitable folder to contain it all. Right-click and save the content to a file with a ***.ps1** extension:
-
-![](https://i.imgur.com/NJR1LFW.png)
 
 To run the script, simply right-click it and select "Run with PowerShell":
 ![](https://i.imgur.com/UbWAJfA.png)
@@ -141,7 +137,8 @@ Fundator supplies a sample bot which you can use as a template for your own bot.
 To test your bot, you need ghostly. Windows will download ghostly automatically when running the Powershell script. Linux users need to download ghostly manually.
 
 - Start ghostly.exe
-- Start your bot (python your-bot-entrypoint.py)
+- Start your bot:
+`python your-bot-entrypoint.py`
 
 There needs to be at least two players connected to ghostly before a game can start. Either add "Local user" in ghostly, or start a new instance of your bot. 
 
@@ -149,19 +146,6 @@ There needs to be at least two players connected to ghostly before a game can st
 
 # How to submit your bot
 Participants must submit their bots through GitHub. Take a look at the "All users" section under "How to get started" for details on how to set up a GitHub account and an empty bot repository.
-
-Once you have an empty repository on GitHub, it's time to initialize your local repository. Navigate to the directory where your bot code resides. If you want to start off using the sample bot, that would be in the *somewhere-on-your-drive\FAIGHTbots\python_boilerplate*.
-
-Open a command prompt in this directory.
-
-- Run `git init` to initialize a local repository
-- Run `git add --all` to add all files and folders in the directory to source control
-- Run `git commit -m "First commit"` to commit the added files and folders
-- Run `git remote add origin your-repository-url-in-ssh-format` to connect your local repository to your (empty) GitHub repository.
-    <sub>*example:`git remote add origin git@github.com:Fundator/FAIGHTbots.git`*</sub>
-- Run `git push` to push your first commit to GitHub
-
-It's generally good practice to push changes to GitHub often as you work.
 
 **Important 0:**
 The tournament application does not like weird characters in file/directory names. Please stick to [a-zA-Z_], no whitespace.
@@ -174,7 +158,23 @@ Your bot code needs a file name ***entrypoint_your-bot-name.py***. Note the unde
 **Important 2:** 
 The automatic bot loading script only fetches/clones from the *master* branch of your repository. Make sure your final bot code is merged to *master* if you end up using experimental branches etc.
 
+### How to push to GitHub
+Once you have an empty repository on GitHub, it's time to initialize your local repository. Navigate to the directory where your bot code resides. If you want to start off using the sample bot, that would be in the *somewhere-on-your-drive\FAIGHTbots\python_boilerplate*.
+
+Open a command prompt in this directory.
+
+- Run `git init` to initialize a local repository
+- Run `git add --all` to add all files and folders in the directory to source control
+- Run `git commit -m "First commit"` to commit the added files and folders
+- Run `git remote add origin your-repository-url-in-HTTPS-format` to connect your local repository to your (empty) GitHub repository. Note the **HTTPS** URL format.
+    <sub>*example:`git remote add origin https://github.com/Fundator/FAIGHTbots.git`*</sub>
+- Run `git push` to push your first commit to GitHub
+
+It's generally good practice to push changes to GitHub often as you work.
+
 <div style="page-break-after: always;"></div>
+
+# 
 
 # Sample bot: API documentation
 ### Information that is statically available:
