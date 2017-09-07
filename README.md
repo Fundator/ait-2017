@@ -1,4 +1,4 @@
-# FAIGHT - Fundator Artificial IntelliGence Heritage Tournament
+# FAIGHT - Fundator's Artificial IntelliGence Heritage Tournament
 
 This repository contains all the information you need in order to participate in the Fundator Artifical IntelliGence Heritage Tournament (hereby known as FAIGHT). 
 
@@ -20,6 +20,8 @@ A walkthrough of the sample bot in pseudo-code form.
 
 ***Note***: For automation purposes, please make sure you follow the guidelines for file/folder structure in ***How to submit code***.
 
+<div style="page-break-after: always;"></div>
+
 ## Overview of the competition
 FAIGHT is a game similar to PAC-MAN, only you are one of the ghosts. 
 
@@ -33,6 +35,9 @@ Any disputes are resolved solely at the discretion of Fundator Judges&trade;.
 - 1st place: **Heder**
 - 2nd place: **Ære**
 - 3rd place: **$$$**
+
+<div style="page-break-after: always;"></div>
+
 ## Game rules
 * You can move up, down, left or right each game tick. A game tick lasts ~100 ms.
 * You only move one square per game tick.
@@ -49,6 +54,9 @@ Any disputes are resolved solely at the discretion of Fundator Judges&trade;.
 * The monster tries to eat all pellets as quickly as possible.
 * If you collide with the monster you die but don't lose your points.
 * The tournament will be held on the ghostly map called "default.txt". (ghostly is covered further down.)
+
+<div style="page-break-after: always;"></div>
+
 ## How to get started
 For this competition, Fundator only supports Windows as the platform and python as the programming language. You *can* use Linux, but then there's a bit more manual labor getting things up and running.
 
@@ -74,6 +82,8 @@ To test your bot, first start ghostly (the PAC-MAN clone), then start your bot. 
 Ghostly needs at least two connected players in order to start. You can either start multiple instances of your own bot, or click "Enable human". The latter adds "Local user" which can be controlled by the arrow-keys.
 
 The tournament will be held on the map called "default.txt".
+
+<div style="page-break-after: always;"></div>
 
 ### Windows users
 
@@ -112,6 +122,8 @@ Right-click and save the content to a file with a ***.ps1** extension. The scrip
 To run the script, simply right-click it and select "Run with PowerShell":
 ![](https://i.imgur.com/UbWAJfA.png)
 
+<div style="page-break-after: always;"></div>
+
 ### Linux users
 To get going on Linux, you need to do the following:
 
@@ -134,6 +146,8 @@ Ghostly is a PAC-MAN clone server application (the bots are the clients). To mak
 #### Download the sample bot
 The sample bot can be found here: http://bit.ly/2eOJH7u
 
+<div style="page-break-after: always;"></div>
+
 ## How to submit your bot
 Participants must submit their bots through GitHub. Take a look at the "All users" section under "How to get started" for details on how to set up a GitHub account and an empty bot repository.
 
@@ -150,11 +164,18 @@ Open a command prompt in this directory.
 
 It's generally good practice to push changes to GitHub often as you work.
 
+**Important 0:**
+The tournament application does not like weird characters in file/directory names. Please stick to [a-zA-Z_], no whitespace.
+
 **Important 1:**
 Your bot code needs a file name ***entrypoint_your-bot-name.py***. Note the underscore between *entrypoint* and *bot name* This is the file that will be fed as an argument to the *python* executable during the tournament.
 
+**Make sure the bot name in the entrypoint filename matches the name sent when connecting to ghostly. In the sample bot code, the name is specified inside the entrypoint file.**
+
 **Important 2:** 
 The automatic bot loading script only fetches/clones from the *master* branch of your repository. Make sure your final bot code is merged to *master* if you end up using experimental branches etc.
+
+<div style="page-break-after: always;"></div>
 
 ## Sample bot: API documentation
 ### Information that is statically available:
@@ -172,6 +193,9 @@ The automatic bot loading script only fetches/clones from the *master* branch of
 * How much a super pellet is worth.
 * When you consider a dangerous enemy to be too close.
 * When you consider the monster to be too close.
+
+<div style="page-break-after: always;"></div>
+
 ### The information available after every state update:
 #### Map info
 * Full double array game map representation.
@@ -196,6 +220,8 @@ These are based on the ticks left of both ghosts being dangerous. Say both ghost
 * If the enemy is dangerous.
 * Is Monster on map.
 
+<div style="page-break-after: always;"></div>
+
 ### Main Functions of Concern.
 #### AI.py
 ##### get_move(), returns: int(range(0,4))
@@ -213,6 +239,7 @@ Same.
 ##### get_bf_path(start_Pos,(goal_Pos or goal_map_character)) returns: list<Position>
 ##### get_astar_path(start_Pos,(goal_Pos) returns: list<Position>
 
+<div style="page-break-after: always;"></div>
 
 ## Sample bot: Pseudo-code edition&trade;
 ### The main AI structure function: get_move()
