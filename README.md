@@ -38,7 +38,7 @@ Any disputes are resolved solely at the discretion of Fundator Judges&trade;.
 
 <div style="page-break-after: always;"></div>
 
-## Game rules
+# Game rules
 * You can move up, down, left or right each game tick. A game tick lasts ~100 ms.
 * You only move one square per game tick.
 * If you don't send a new command until the new game tick starts your bot doesn't move.
@@ -57,40 +57,22 @@ Any disputes are resolved solely at the discretion of Fundator Judges&trade;.
 
 <div style="page-break-after: always;"></div>
 
-## How to get started
-For this competition, Fundator only supports Windows as the platform and python as the programming language. You *can* use Linux, but then there's a bit more manual labor getting things up and running.
+# How to get started
+For this competition, Fundator only supports Windows as the platform and python as the programming language. Fundator provides a Powershell script to get Windows users going as fast as possible. You *can* use Linux, but then there's a bit more manual labor getting things up and running.
 
-### All users
 Regardless of platform, all participants need a GitHub account and a repository for the bot code.
 
 - If you do not have GitHub account, go [here](https://github.com/join?source=header-home) to create one.
 - Create a new, empty GitHub repository for your bot code. Do NOT add a README file or .gitignore file at this stage - leave it empty.
 ![](https://i.imgur.com/983EMnf.png)
 
-#### Sample bot
-Fundator supplies a sample bot which you can use as a template for your own bot. The bot is automatically downloaded for Windows users running the PowerShell script. The sample bot repository can be found here: http://bit.ly/2eOJH7u
-
-**NB:** If you choose to base your bot on the sample bot, please remember to update the part of the code that sets your bot's name.
-
-#### Testing your bot
-Your bot is run against an application called ghostly. Ghostly is a PAC-MAN clone. How to download and run ghostly is covered separately for Windows and Linux users.
-
-To test your bot, first start ghostly (the PAC-MAN clone), then start your bot. Your bot will then connect to ghostly and appear on the start screen.
-
-![](https://i.imgur.com/MDG6RSh.png)
-
-Ghostly needs at least two connected players in order to start. You can either start multiple instances of your own bot, or click "Enable human". The latter adds "Local user" which can be controlled by the arrow-keys.
-
-The tournament will be held on the map called "default.txt".
 
 <div style="page-break-after: always;"></div>
 
-### Windows users
-
-
+# Getting started: Windows users
 Fundator provides a Powershell script to get you going as fast as possible. Before running the script, you need to make sure of a couple of things.
 
-#### Pre-requisites before running Powershell script
+### Pre-requisites before running Powershell script
 
 1. Make sure you have *python* installed. If not, a late version of *WinPython* should work. *(download: [32bit](https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.4.0/WinPython-32bit-3.5.4.0Qt5.exe/download) / [64bit](https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.4.0/WinPython-64bit-3.5.4.0Qt5.exe/download))*
 1. Make sure you have the python executable added to the Windows environment variables (PATH). You can test this by opening a command prompt and write the following command:
@@ -112,11 +94,12 @@ Fundator provides a Powershell script to get you going as fast as possible. Befo
 
     Confirm the prompt, and you should be good to go. You might want to reset the policy settings back to the old value when you're done, but that's up to you.
 
-#### Running the Powershell script
+### Running the Powershell script
 If all the pre-requisites above are met, read through the [script found
 here](https://raw.githubusercontent.com/Fundator/ait-2017/master/OneClickFaight.ps1?token=AIVAgM4t68FvAUuJ3tSYC2YTXWrxw8YDks5Zs9BnwA%3D%3D).
 
-Right-click and save the content to a file with a ***.ps1** extension. The script downloads a bunch of files, so make sure to place it in a suitable folder to contain it all:
+The script downloads a bunch of files, so make sure to place it in a suitable folder to contain it all. Right-click and save the content to a file with a ***.ps1** extension:
+
 ![](https://i.imgur.com/NJR1LFW.png)
 
 To run the script, simply right-click it and select "Run with PowerShell":
@@ -124,10 +107,10 @@ To run the script, simply right-click it and select "Run with PowerShell":
 
 <div style="page-break-after: always;"></div>
 
-### Linux users
+# Getting started: Linux users
 To get going on Linux, you need to do the following:
 
-#### Register your bot for automatic retrieval
+### Register your bot for automatic retrieval
 In order to automatically collect all bot submissions, participants need to register their bots in a Google Sheet. The sheet can be found here:
 http://bit.ly/2iOHugN
 
@@ -136,19 +119,35 @@ The first column contains your bot name. Please adhere to the following regex: \
 The second column contains the GitHub repository URL for your bot's code. The URL **must** be in SSH format, *not* HTTPS:
 ![](https://i.imgur.com/DoWF5jA.png)
 
-#### Download ghostly
+### Download ghostly
 Ghostly is a PAC-MAN clone server application (the bots are the clients). To make ghostly run on Linux, you need to compile it manually:
 
 - Check out the code found here: http://bit.ly/2iRvWJs
 - Install the development packages for qt5 declarative and qt5 graphicaleffects
 - Run `qmake && make`
 
-#### Download the sample bot
+### Download the sample bot
 The sample bot can be found here: http://bit.ly/2eOJH7u
 
 <div style="page-break-after: always;"></div>
 
-## How to submit your bot
+# Sample bot
+
+Fundator supplies a sample bot which you can use as a template for your own bot. The bot is automatically downloaded for Windows users running the PowerShell script. The sample bot repository can be found here: http://bit.ly/2eOJH7u
+
+**NB**: If you choose to base your bot on the sample bot, please remember to update the part of the code that sets your bot's name.
+
+# How to test your bot
+To test your bot, you need ghostly. Windows will download ghostly automatically when running the Powershell script. Linux users need to download ghostly manually.
+
+- Start ghostly.exe
+- Start your bot (python your-bot-entrypoint.py)
+
+There needs to be at least two players connected to ghostly before a game can start. Either add "Local user" in ghostly, or start a new instance of your bot. 
+
+<div style="page-break-after: always;"></div>
+
+# How to submit your bot
 Participants must submit their bots through GitHub. Take a look at the "All users" section under "How to get started" for details on how to set up a GitHub account and an empty bot repository.
 
 Once you have an empty repository on GitHub, it's time to initialize your local repository. Navigate to the directory where your bot code resides. If you want to start off using the sample bot, that would be in the *somewhere-on-your-drive\FAIGHTbots\python_boilerplate*.
@@ -177,7 +176,7 @@ The automatic bot loading script only fetches/clones from the *master* branch of
 
 <div style="page-break-after: always;"></div>
 
-## Sample bot: API documentation
+# Sample bot: API documentation
 ### Information that is statically available:
 #### Map info
 * A "Descriptor" holds named variables for all the characters that appears on the map:
