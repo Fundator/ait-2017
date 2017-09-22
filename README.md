@@ -16,7 +16,7 @@ Walks you through the steps required to setup a local bot development environmen
 - ***How to submit code***
 All tournament submissions are done through GitHub. This section explains how. 
 - ***Sample bot: API documentation***
-Fundator provides a boilerplate bot written in Python. The sample code handles client/server connectivity, message parsing, automation compliance with regards to files/folder structure  etc. You just need to replace the (very) simple AI with your own!
+Fundator provides a boilerplate bot written in Python. The sample code handles client/server connectivity, message parsing, automates compliance with regards to files/folder structure  etc. You just need to replace the (very) simple AI with your own!
 - ***Sample bot: Pseudo-code edition&trade;***
 A walkthrough of the sample bot in pseudo-code form.
 
@@ -25,7 +25,11 @@ A walkthrough of the sample bot in pseudo-code form.
 <div style="page-break-after: always;"></div>
 
 ## Overview of the competition
-FAIGHT is a game similar to PAC-MAN, only you are one of the ghosts. 
+FAIGHT is a game similar to PAC-MAN, only you are one of the ghosts.
+
+
+![](https://i.imgur.com/xTFJvwX.gif)
+
 
 You create an AI that controls a ghost. Initially you can't pass through other ghosts, so watch out for getting blocked in. You gain points by eating pellets, and by eating a super pellet you can eat other ghosts. The round is over when either the last pellet is gone or there is only one player left.
 
@@ -33,17 +37,13 @@ The competition is hosted as a [double elimination](https://en.wikipedia.org/wik
 
 Any disputes are resolved solely at the discretion of Fundator Judges&trade;.
 
-### Prizes: TODO
-- 1st place: **Heder**
-- 2nd place: **Ære**
-- 3rd place: **$$$**
-
 <div style="page-break-after: always;"></div>
 
 # Game rules
-* You can move up, down, left or right each game tick. A game tick lasts ~100 ms.
+* The tournament will be held on the map called "default.txt". (ghostly, the PAC-MAN clone, is covered further down.)
+* You can move up, right, down or left each game tick. A game tick lasts ~100 ms.
 * You only move one square per game tick.
-* If you don't send a new command until the new game tick starts your bot doesn't move.
+* If you don't send a new command before the new game tick starts your bot doesn't move.
 * Each game tick the latest command sent by all players is handled in a randomized order (randomized for each gametick).
 * If you try to move into a square that is already occupied by another bot the move fails.
 * You win by having the most points at the end of the round.
@@ -55,7 +55,7 @@ Any disputes are resolved solely at the discretion of Fundator Judges&trade;.
 * In sudden death mode a monster is activated (the yellow thing).
 * The monster tries to eat all pellets as quickly as possible.
 * If you collide with the monster you die but don't lose your points.
-* The tournament will be held on the ghostly map called "default.txt". (ghostly is covered further down.)
+
 
 <div style="page-break-after: always;"></div>
 
@@ -67,7 +67,8 @@ Regardless of platform, all participants need a GitHub account and a repository 
 - If you do not have GitHub account, go [here](https://github.com/join?source=header-home) to create one.
 - Create a new, empty GitHub repository for your bot code. Do NOT add a README file or .gitignore file at this stage - leave it empty.
 ![](https://i.imgur.com/983EMnf.png)
-
+- You will need the repository's URL in later steps. Copy the **SSH** URL, *not* the HTTPS URL:
+![](https://i.imgur.com/DoWF5jA.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -87,7 +88,9 @@ Fundator provides a Powershell script to get you going as fast as possible. Befo
 1. Make sure you have *Git for Windows* (https://git-scm.com/download/win) installed and added to the Windows environment variables (PATH). The test procedure and remedies are exactly the same as for *python*, only with the following command:
 `git --version`
 
-1. Make sure Windows allows running Powershell scripts. To test this, **open a Powershell prompt as Administrator** and run the following command:
+<div style="page-break-after: always;"></div>
+
+4. Make sure Windows allows running Powershell scripts. To test this, **open a Powershell prompt as Administrator** and run the following command:
 `Get-ExecutionPolicy`
 
     If your policy is set to RemoteSigned, Unrestricted or Bypass, you should be fine. If not, run the following to allow running scripts:
@@ -112,8 +115,7 @@ http://bit.ly/2iOHugN
 
 The first column contains your bot name. Please adhere to the following regex: \^[a-zA-Z0-9]{4,10}$. That is, only A-Z or numbers, minimum length 4 characters, maximum length 10 characters.
 
-The second column contains the GitHub repository URL for your bot's code. The URL **must** be in SSH format, *not* HTTPS:
-![](https://i.imgur.com/DoWF5jA.png)
+The second column contains the GitHub repository SSH URL for your bot's code. See the repository setup guide a few steps back for how to find the URL.
 
 ### Download ghostly
 Ghostly is a PAC-MAN clone server application (the bots are the clients). To make ghostly run on Linux, you need to compile it manually:
@@ -127,20 +129,51 @@ The sample bot can be found here: http://bit.ly/2eOJH7u
 
 <div style="page-break-after: always;"></div>
 
+# Getting started: macOS users
+To get going on macOS, first of all you need to make sure you have installed the dependencies mentioned as prerequisites. After this you must do the following:
+
+### Register your bot for automatic retrieval
+In order to automatically collect all bot submissions, participants need to register their bots in a Google Sheet. The sheet can be found here:
+http://bit.ly/2iOHugN
+
+The first column contains your bot name. Please adhere to the following regex: \^[a-zA-Z0-9]{4,10}$. That is, only A-Z or numbers, minimum length 4 characters, maximum length 10 characters.
+
+The second column contains the GitHub repository SSH URL for your bot's code. See the repository setup guide a few steps back for how to find the URL.
+
+<div style="page-break-after: always;"></div>
+
+### Download ghostly
+Ghostly is a PAC-MAN clone server application (the bots are the clients).:
+
+- Download the source code found here: http://bit.ly/2iRvWJs
+- Extract to desired project location
+
+### Run Qt Creator
+- Qt Creator will not be visible from Spotlight until after initial run
+- Default install location is /Users/<your_username>/Qt
+
+### Open Ghostly project 
+- Select the project file, 'ghostly.pro', to open the project. 
+- Push play in the lower left corner.
+
 # Sample bot
 
 Fundator supplies a sample bot which you can use as a template for your own bot. The bot is automatically downloaded for Windows users running the PowerShell script. The sample bot repository can be found here: http://bit.ly/2eOJH7u
 
 **NB**: If you choose to base your bot on the sample bot, please remember to update the part of the code that sets your bot's name.
 
+If you decide to write your bot from scratch, you'll probably be interested in the raw message format sent from ghostly. That can be [found here](https://github.com/sandsmark/aicompo-tg17).
+
 # How to test your bot
 To test your bot, you need ghostly. Windows will download ghostly automatically when running the Powershell script. Linux users need to download ghostly manually.
 
 - Start ghostly.exe
 - Start your bot:
-`python your-bot-entrypoint.py`
+`python entrypoint_your-bot-name.py`
 
-There needs to be at least two players connected to ghostly before a game can start. Either add "Local user" in ghostly, or start a new instance of your bot. 
+There needs to be at least two players connected to ghostly before a game can start. Either add "Local user" in ghostly, or start a second instance of your bot. 
+
+**NB!** The competition will be held on the map called "default.txt".
 
 <div style="page-break-after: always;"></div>
 
@@ -151,7 +184,7 @@ Participants must submit their bots through GitHub. Take a look at the "All user
 The tournament application does not like weird characters in file/directory names. Please stick to [a-zA-Z_], no whitespace.
 
 **Important 1:**
-Your bot code needs a file name ***entrypoint_your-bot-name.py***. Note the underscore between *entrypoint* and *bot name* This is the file that will be fed as an argument to the *python* executable during the tournament.
+Your bot code needs a file named ***entrypoint_your-bot-name.py***. Note the underscore between *entrypoint* and *bot name* This is the file that will be fed as an argument to the *python* executable during the tournament.
 
 **Make sure the bot name in the entrypoint filename matches the name sent when connecting to ghostly. In the sample bot code, the name is specified inside the entrypoint file.**
 
@@ -166,9 +199,9 @@ Open a command prompt in this directory.
 - Run `git init` to initialize a local repository
 - Run `git add --all` to add all files and folders in the directory to source control
 - Run `git commit -m "First commit"` to commit the added files and folders
-- Run `git remote add origin your-repository-url-in-HTTPS-format` to connect your local repository to your (empty) GitHub repository. Note the **HTTPS** URL format.
-    <sub>*example:`git remote add origin https://github.com/Fundator/FAIGHTbots.git`*</sub>
-- Run `git push` to push your first commit to GitHub
+- Run `git remote add aibotremote your-repository-url-in-HTTPS-format` to connect your local repository to your (empty) GitHub repository. Note the **HTTPS** URL format.
+    <sub>*example:`git remote add aibotremote https://github.com/Fundator/FAIGHTbots.git`*</sub>
+- Run `git push aibotremote` to push your first commit to GitHub
 
 It's generally good practice to push changes to GitHub often as you work.
 
